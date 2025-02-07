@@ -1,18 +1,29 @@
-ECS
+# ECS - Elastic Container Service
 
-Arch:
-Cluster
+![ecs](aws-ecs.png)
 
-Task Definition (equivalente a um Deployment)
-Service (equivalente a um ReplicaSet)
+## Componentes
 
-Task
-Container
+- ECS Cluster
+- Container Instances
+	- Auto Scaling Group 
+- Capacity Provider
+- Task Definition
+- Service
+- Task
 
+
+*Observação:*\
+*Task Definition (semelhante a um Deployment do Kubernetes)*\
+*Service (semelhante a um ReplicaSet do Kubernetes)*
+*Task (semelhante a um Pod do Kubernetes)*
+
+
+## HandsOn
 
 1. Criar Cluster
 - EC2
-	- Auto scalling
+	- Auto scaling group
 	- ondemand / spot
 	- s.o Linux
 	- instancia (t2.micro)
