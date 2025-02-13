@@ -13,12 +13,12 @@
 
 
 ## Azure
-- [Azure EntraID](aws/entra/README.md)
-- [Azure Blob](aws/blob/README.md)
-- [Azure VNET](aws/vnet/README.md)
-- [Azure VirtualMachine](aws/virtualmachine/README.md)
-- [Azure Database](aws/database/README.md)
-- [Azure K8S](aws/k8s/README.md)
+- [Azure EntraID](azure/entra/README.md)
+- [Azure Blob](azure/blob/README.md)
+- [Azure VNET](azure/vnet/README.md)
+- [Azure VirtualMachine](azure/virtualmachine/README.md)
+- [Azure Database](azure/database/README.md)
+- [Azure K8S](azure/k8s/README.md)
 
 
 
