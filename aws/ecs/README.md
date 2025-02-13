@@ -35,14 +35,13 @@
 
 
 2. Criar uma task definition
-- EC2
-- Linux
+- Launch type (requires compatibilities
 - Network mode: awsvpc
 - Task size: cpu e memory
 - Task role: IAM role
 - Task execution role: IAM role
 - Container: 
-	- web
+	- name
 	- imagem
 	- container port
 	- resource limits - none
