@@ -13,6 +13,24 @@
 
 
 
-Diferenças de arquitetura entre AWS e Azure:
+- [Azure EntraID](aws/entra/README.md)
+- [Azure Blob](aws/blob/README.md)
+- [Azure VNET](aws/vnet/README.md)
+- [Azure VirtualMachine](aws/virtualmachine/README.md)
+- [Azure Database](aws/database/README.md)
+- [Azure K8S](aws/k8s/README.md)
+
+
+
+## AWS to Azure Service Equivalents
+
+<https://learn.microsoft.com/en-us/azure/architecture/aws-professional/>
+
+<https://github.com/sv222/aws-to-azure-service-equivalents>
+
+
+
+## Diferenças de arquitetura entre AWS e Azure:
  
 <https://techcommunity.microsoft.com/blog/startupsatmicrosoftblog/key-architectural-differences-between-aws-and-azure-explained/4244702>
+
