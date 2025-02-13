@@ -9,7 +9,7 @@
 - [AWS ECS](aws/ecs/README.md)
 - [AWS K8S](aws/k8s/README.md)
 - [AWS WELL](aws/well/README.md)
-- [AWS Certificação Pratictioner](aws/certi/pratictioner/README.md)
+- [AWS Certificação Pratictioner](aws/certi/practitioner/README.md)
 
 
 
