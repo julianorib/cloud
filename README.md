@@ -1,6 +1,6 @@
 # Estudos Cloud
 
-
+## AWS
 - [AWS IAM](aws/iam/README.md)
 - [AWS S3](aws/s3/README.md)
 - [AWS VPC](aws/vpc/README.md)
@@ -12,7 +12,7 @@
 - [AWS Certificação Pratictioner](aws/certi/practitioner/README.md)
 
 
-
+## Azure
 - [Azure EntraID](aws/entra/README.md)
 - [Azure Blob](aws/blob/README.md)
 - [Azure VNET](aws/vnet/README.md)
