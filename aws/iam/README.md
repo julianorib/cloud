@@ -20,21 +20,7 @@ Com o AWS Identity and Access Management (IAM), é possível especificar quem po
 
 São indivíduos ou aplicativos que precisam de acesso aos seus recursos do AWS. Cada usuário recebe credenciais exclusivas, como senhas e chaves de acesso.
 
-### Grupos
-
-São coleções de usuários. Em vez de atribuir permissões a cada usuário individualmente, você pode colocar os usuários em grupos e atribuir permissões ao grupo. Isso facilita o gerenciamento de permissões para vários usuários ao mesmo tempo.
-
-### Funções
-
-Devem ser assumidas por qualquer pessoa que precise delas, em vez de serem associadas a uma única pessoa. Por exemplo, uma instância do EC2 pode "assumir uma função" para acessar os buckets do S3 sem precisar de credenciais permanentes. As funções usam credenciais de segurança temporárias que expiram automaticamente, o que é ótimo em termos de segurança.
-
-
-### Politicas
-
-São documentos JSON que definem permissões. Eles especificam quais ações são permitidas ou negadas em quais recursos. As políticas podem ser anexadas a usuários, grupos ou funções.
-
-
-## Access Token
+#### Access Token
 
 Use chaves de acesso para fazer chamadas programáticas para a AWS da AWS CLI, do AWS Tools for PowerShell, de SDKs da AWS ou de chamadas de API diretas da AWS. Você pode ter no máximo duas chaves de acesso (ativas ou inativas) por vez.
 
@@ -47,11 +33,43 @@ export AWS_ACCESS_KEY suachave
 export AWS_SECRET_KEY suasenha
 ```
 
-## Politicas
+### Grupos
+
+São coleções de usuários. Em vez de atribuir permissões a cada usuário individualmente, você pode colocar os usuários em grupos e atribuir permissões ao grupo. Isso facilita o gerenciamento de permissões para vários usuários ao mesmo tempo.
+
+### Funções
+
+As funções do IAM ajudam você a gerenciar as permissões dos seus serviços e aplicativos. 
+
+Ao contrário dos usuários de IAM, que são associados a uma pessoa específica, as funções são projetadas para serem assumidas por qualquer pessoa que precise delas, o que as torna incrivelmente flexíveis.
+
+Considere uma função como um conjunto de permissões que podem ser atribuídas temporariamente a entidades como serviços do AWS (por exemplo, EC2, Lambda) ou até mesmo a usuários de outra conta do AWS. Isso é ótimo para a segurança porque as funções usam credenciais temporárias que expiram automaticamente.
+
+### Entidade Confiável
+
+Define quem pode assumir a função. Por exemplo, você pode criar uma política de confiança que permita que uma instância instância do EC2 ou um AWS Lambda assuma a função. Essa política especifica as entidades confiáveis (como serviços ou usuários) que podem usar a função.
+
+Uma entidade deve assumir uma função para usá-la. Quando uma instância do EC2 ou função Lambda assume uma função, ela obtém credenciais de segurança temporárias que podem ser usadas para fazer solicitações aos serviços do AWS.
 
 
-As políticas são escritas no formato JSON e consistem em alguns elementos-chave.\
-Como exemplo, aqui está o documento JSON para a política gerenciada pelo AWS chamada "AmazonS3FullAccess":
+### Politica de Permissões
+
+Definem quais ações são permitidas ou negadas quando a função é assumida. Elas funcionam exatamente como as políticas que você anexa aos usuários do IAM, especificando quais recursos a função pode acessar e quais ações pode executar.
+
+Algumas Entidades requerem uma Politica, enquanto outras não.
+
+Aqui está um exemplo simples: Suponha que você tenha um aplicativo em execução em uma instância do EC2 que precisa ler de um bucket do S3. Em vez de armazenar chaves de acesso na instância, você pode criar uma função IAM e Adicionar uma política que permita a leitura do S3. Em seguida, você anexa essa função à sua instância do EC2. Quando a instância é executada, ela assume a função e obtém credenciais temporárias para acessar o bucket S3.
+
+As credenciais temporárias são fornecidas à instância por meio do Serviço de token de segurança da AWS (STS) DA AWS. Essas credenciais incluem um ID de chave de acesso, uma chave de acesso secreta e um token de sessão, e são válidas por um curto período, normalmente algumas horas.
+
+O uso de funções também facilita o gerenciamento de permissões, pois você pode atualizar as políticas da função em um único local, o que se aplica automaticamente a todas as entidades que assumem a função.
+
+
+### Politicas
+
+<https://docs.aws.amazon.com/pt_br/IAM/latest/UserGuide/access_policies.html>
+
+São documentos JSON que definem permissões. Eles especificam quais ações são permitidas ou negadas em quais recursos. As políticas podem ser anexadas a usuários, grupos ou funções.
 
 ```
 ​​{
@@ -73,37 +91,18 @@ Como exemplo, aqui está o documento JSON para a política gerenciada pelo AWS c
 - Resource: Isso especifica os recursos do AWS aos quais as ações se aplicam. Os recursos são identificados usando Nomes de recursos da Amazon (ARNs), que identificam um recurso de forma exclusiva.
  
 
- ### Tipos de Politica
+ #### Tipos de Politica
 
- As **políticas gerenciadas** pela AWS são criadas e mantidas pela AWS, o que as torna um excelente ponto de partida para os conjuntos de permissões comumente usados. As políticas gerenciadas pelo cliente são aquelas que você mesmo cria e gerencia, o que lhe dá mais flexibilidade para escrever documentos JSON personalizados.
+As **políticas gerenciadas** pela AWS são criadas e mantidas pela AWS, o que as torna um excelente ponto de partida para os conjuntos de permissões comumente usados. As políticas gerenciadas pelo cliente são aquelas que você mesmo cria e gerencia, o que lhe dá mais flexibilidade para escrever documentos JSON personalizados.
+
+<https://docs.aws.amazon.com/pt_br/aws-managed-policy/latest/reference/policy-list.html>
 
 As **políticas inline**, por outro lado, são diretamente associadas a um único usuário, grupo ou função. Elas são úteis para permissões específicas e rigidamente controladas que não devem ser reutilizadas. No entanto, o gerenciamento de políticas em linha pode se tornar complicado à medida que elas aumentam em número, por isso elas são geralmente menos preferidas do que as políticas gerenciadas.
 
 
-### Gerador de Politica
+#### Gerador de Politica
 
 <https://awspolicygen.s3.amazonaws.com/policygen.html>
 
 
-## Funções
-
-As funções do IAM ajudam você a gerenciar as permissões dos seus serviços e aplicativos. 
-
-Ao contrário dos usuários de IAM, que são associados a uma pessoa específica, as funções são projetadas para serem assumidas por qualquer pessoa que precise delas, o que as torna incrivelmente flexíveis.
-
-Considere uma função como um conjunto de permissões que podem ser atribuídas temporariamente a entidades como serviços do AWS (por exemplo, EC2, Lambda) ou até mesmo a usuários de outra conta do AWS. Isso é ótimo para a segurança porque as funções usam credenciais temporárias que expiram automaticamente.
-
-### Tipo de Confiança
-
-**Políticas de confiança** definem quem pode assumir a função. Por exemplo, você pode criar uma política de confiança que permita que uma instância instância do EC2 ou um AWS Lambda assuma a função. Essa política especifica as entidades confiáveis (como serviços ou usuários) que podem usar a função.
-
-**Políticas de permissões** definem quais ações são permitidas ou negadas quando a função é assumida. Elas funcionam exatamente como as políticas que você anexa aos usuários do IAM, especificando quais recursos a função pode acessar e quais ações pode executar.
-
-Uma entidade deve assumir uma função para usá-la. Quando uma instância do EC2 ou função Lambda assume uma função, ela obtém credenciais de segurança temporárias que podem ser usadas para fazer solicitações aos serviços do AWS.
-
-Aqui está um exemplo simples: Suponha que você tenha um aplicativo em execução em uma instância do EC2 que precisa ler de um bucket do S3. Em vez de armazenar chaves de acesso na instância, você pode criar uma função IAM com uma política que permita a leitura do S3. Em seguida, você anexa essa função à sua instância do EC2. Quando a instância é executada, ela assume a função e obtém credenciais temporárias para acessar o bucket S3.
-
-As credenciais temporárias são fornecidas à instância por meio do Serviço de token de segurança da AWS (STS) DA AWS. Essas credenciais incluem um ID de chave de acesso, uma chave de acesso secreta e um token de sessão, e são válidas por um curto período, normalmente algumas horas.
-
-O uso de funções também facilita o gerenciamento de permissões, pois você pode atualizar as políticas da função em um único local, o que se aplica automaticamente a todas as entidades que assumem a função.
 
