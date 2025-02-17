@@ -33,7 +33,7 @@ resource "aws_iam_role" "test_role" {
 }    
     )
 }
-## Anexa a Função Politicas Existentes:
+## Associa a uma Função, Politicas Existentes:
 
 resource "aws_iam_role_policy_attachment" "policy_1" {
   role       = aws_iam_role.test_role.name
@@ -45,7 +45,7 @@ resource "aws_iam_role_policy_attachment" "policy_2" {
 }
 
 
-## Cria e Anexa a Função uma Politica Inline Especifica:
+## Cria e Associa a uma Função, uma Politica Inline Especifica:
 
 resource "aws_iam_role_policy" "policy" {
   name = "Policy"
