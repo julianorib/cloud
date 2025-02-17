@@ -24,7 +24,7 @@ São indivíduos ou aplicativos que precisam de acesso aos seus recursos do AWS.
 
 Use chaves de acesso para fazer chamadas programáticas para a AWS da AWS CLI, do AWS Tools for PowerShell, de SDKs da AWS ou de chamadas de API diretas da AWS. Você pode ter no máximo duas chaves de acesso (ativas ou inativas) por vez.
 
-Estas chaves são criadas no usuário na sessão **Credenciais de segurança" ou "Access Token".
+Estas chaves são criadas no usuário na sessão **Credenciais de segurança** ou **Access Token**.
 
 Para utiliza-lás depois, basta exportar como variável de ambiente:
 
@@ -45,20 +45,21 @@ Ao contrário dos usuários de IAM, que são associados a uma pessoa específica
 
 Considere uma função como um conjunto de permissões que podem ser atribuídas temporariamente a entidades como serviços do AWS (por exemplo, EC2, Lambda) ou até mesmo a usuários de outra conta do AWS. Isso é ótimo para a segurança porque as funções usam credenciais temporárias que expiram automaticamente.
 
-### Entidade Confiável
+#### Entidade Confiável
 
 Define quem pode assumir a função. Por exemplo, você pode criar uma política de confiança que permita que uma instância instância do EC2 ou um AWS Lambda assuma a função. Essa política especifica as entidades confiáveis (como serviços ou usuários) que podem usar a função.
 
 Uma entidade deve assumir uma função para usá-la. Quando uma instância do EC2 ou função Lambda assume uma função, ela obtém credenciais de segurança temporárias que podem ser usadas para fazer solicitações aos serviços do AWS.
 
 
-### Politica de Permissões
+#### Politica de Permissões
 
 Definem quais ações são permitidas ou negadas quando a função é assumida. Elas funcionam exatamente como as políticas que você anexa aos usuários do IAM, especificando quais recursos a função pode acessar e quais ações pode executar.
 
 Algumas Entidades requerem uma Politica, enquanto outras não.
 
-Aqui está um exemplo simples: Suponha que você tenha um aplicativo em execução em uma instância do EC2 que precisa ler de um bucket do S3. Em vez de armazenar chaves de acesso na instância, você pode criar uma função IAM e Adicionar uma política que permita a leitura do S3. Em seguida, você anexa essa função à sua instância do EC2. Quando a instância é executada, ela assume a função e obtém credenciais temporárias para acessar o bucket S3.
+##### Aqui está um exemplo simples: 
+Suponha que você tenha um aplicativo em execução em uma instância do EC2 que precisa ler de um bucket do S3. Em vez de armazenar chaves de acesso na instância, você pode criar uma função IAM e Adicionar uma política que permita a leitura do S3. Em seguida, você anexa essa função à sua instância do EC2. Quando a instância é executada, ela assume a função e obtém credenciais temporárias para acessar o bucket S3.
 
 As credenciais temporárias são fornecidas à instância por meio do Serviço de token de segurança da AWS (STS) DA AWS. Essas credenciais incluem um ID de chave de acesso, uma chave de acesso secreta e um token de sessão, e são válidas por um curto período, normalmente algumas horas.
 
@@ -84,11 +85,11 @@ São documentos JSON que definem permissões. Eles especificam quais ações sã
 }
 ```
 
-- O elemento Version especifica a versão do idioma da política.
-- O  siteStatement é onde está a "carne" da apólice. Uma única apólice pode ter várias declarações. Cada declaração inclui alguns campos essenciais:
-- Effect: Esse campo especifica se a declaração permite ou nega o acesso. Você pode escolher entre "Permitir" ou "Negar".
-- Action: Isso define quais ações são permitidas ou negadas. As ações geralmente são as operações que você pode executar em um recurso. O AWS tem ações específicas para cada serviço, portanto, você deve especificá-las corretamente.
-- Resource: Isso especifica os recursos do AWS aos quais as ações se aplicam. Os recursos são identificados usando Nomes de recursos da Amazon (ARNs), que identificam um recurso de forma exclusiva.
+- Version: especifica a versão do idioma da política.
+- Statement: é onde está a "carne" da apólice. Uma única apólice pode ter várias declarações. Cada declaração inclui alguns campos essenciais:
+- - Effect: Esse campo especifica se a declaração permite ou nega o acesso. Você pode escolher entre "Permitir" ou "Negar".
+- - Action: Isso define quais ações são permitidas ou negadas. As ações geralmente são as operações que você pode executar em um recurso. O AWS tem ações específicas para cada serviço, portanto, você deve especificá-las corretamente.
+- - Resource: Isso especifica os recursos do AWS aos quais as ações se aplicam. Os recursos são identificados usando Nomes de recursos da Amazon (ARNs), que identificam um recurso de forma exclusiva.
  
 
  #### Tipos de Politica
