@@ -41,7 +41,7 @@ export AWS_SECRET_KEY suasenha
 
 São coleções de usuários. Em vez de atribuir permissões a cada usuário individualmente, você pode colocar os usuários em grupos e atribuir permissões ao grupo. Isso facilita o gerenciamento de permissões para vários usuários ao mesmo tempo.
 
-### Funções
+### Funções (Roles)
 
 As funções do IAM ajudam você a gerenciar as permissões dos seus serviços e aplicativos. 
 
@@ -96,7 +96,7 @@ São documentos JSON que definem permissões. Eles especificam quais ações sã
 - - Resource: Isso especifica os recursos do AWS aos quais as ações se aplicam. Os recursos são identificados usando Nomes de recursos da Amazon (ARNs), que identificam um recurso de forma exclusiva.
  
 
- #### Tipos de Politica
+#### Tipos de Politica
 
 As **políticas gerenciadas** pela AWS são criadas e mantidas pela AWS, o que as torna um excelente ponto de partida para os conjuntos de permissões comumente usados. As políticas gerenciadas pelo cliente são aquelas que você mesmo cria e gerencia, o que lhe dá mais flexibilidade para escrever documentos JSON personalizados.
 

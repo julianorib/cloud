@@ -3,7 +3,8 @@
 ## Ref:
 <https://aws.amazon.com/pt/vpc/>\
 <https://docs.aws.amazon.com/pt_br/vpc/?icmpid=docs_homepage_featuredsvcs>\
-<https://docs.aws.amazon.com/pt_br/vpc/latest/userguide/how-it-works.html>
+<https://docs.aws.amazon.com/pt_br/vpc/latest/userguide/how-it-works.html>\
+<https://docs.aws.amazon.com/pt_br/vpc/latest/userguide/default-vpc-components.html>
 
 O Amazon Virtual Private Cloud (Amazon VPC) oferece controle total sobre seu ambiente de redes virtual, incluindo posicionamento de recursos, conectividade e segurança. Comece a usar configurando sua VPC no console de serviço AWS. Em seguida, adicione recursos a ela, como instâncias do Amazon Elastic Compute Cloud (EC2) e Amazon Relational Database Service (RDS). Por fim, defina como suas VPCs se comunicam entre si, entre contas, zonas de disponibilidade (AZs) ou Regiões da AWS. 
 
@@ -24,10 +25,16 @@ Não há custo adicional por usar a VPC. Porém, alguns componentes da VPC são 
 - NAT Gateway
 - Elastic IP 
 - Security Groups
+- Vários outros
 
 ## VPC
 
 A VPC é uma rede virtual muito semelhante a uma rede tradicional que você pode operar no seu próprio data center. Após criar uma VPC, você pode adicionar sub-redes.
+
+## Endereçamento
+
+<https://docs.aws.amazon.com/pt_br/vpc/latest/userguide/vpc-cidr-blocks.html>
+
 
 ## Sub-rede
 
@@ -51,6 +58,18 @@ Um gateway da Internet é um componente da VPC horizontalmente dimensionado, red
 
 Um gateway NAT é um serviço de Network Address Translation (NAT – Conversão de endereços de rede). Você pode usar um gateway NAT para que as instâncias em uma sub-rede privada possam se conectar a serviços fora da VPC, mas os serviços externos não podem iniciar uma conexão com essas instâncias.
 
+Ao criar um gateway NAT, você deve especificar um dos seguintes tipos de conectividade:
+
+### Public
+
+(Padrão) instâncias em sub-redes privadas podem se conectar à Internet por meio de um gateway NAT público, mas não podem receber conexões de entrada não solicitadas da Internet. 
+
+Você cria um gateway NAT público em uma sub-rede pública e deve associar um endereço IP elástico ao gateway NAT na criação. 
+
+### Private
+
+Instâncias em sub-redes privadas podem se conectar a outras VPCs ou à sua rede on-premises por meio de um gateway NAT privado. Você pode rotear o tráfego do gateway NAT por meio de um gateway de trânsito ou de um gateway privado virtual. Não é possível associar um endereço IP elástico a um gateway NAT privado. 
+
 ## Elastic IP
 
 <https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html>
@@ -66,3 +85,24 @@ Você aloca um Elastic IP para sua conta e o associa à instância ou a uma inte
 Um grupo de segurança atua como firewall virtual para as instâncias do EC2 visando controlar o tráfego de entrada e de saída. As regras de entrada controlam o tráfego de entrada para a instância e as regras de saída controlam o tráfego de saída da instância. Ao executar sua instância, é possível especificar um ou mais grupos de segurança. Se você não especificar um grupo de segurança, o Amazon EC2 usará o grupo de segurança padrão para a VPC. 
 
 ## Terraform
+
+### Resource: aws_vpc
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc>
+
+### Resource: aws_subnet
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet>
+
+### Resource: aws_route_table
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table>
+
+### Resource: aws_eip
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eip>
+
+### Resource: aws_nat_gateway
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/nat_gateway>
+
+### Resource: aws_internet_gateway
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/internet_gateway>
+
+### Resource: aws_security_group
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group.html>
