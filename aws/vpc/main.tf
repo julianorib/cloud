@@ -17,7 +17,7 @@ variable "project_name" {
 
 ## Cria uma VPC
 resource "aws_vpc" "vpc" {
-  cidr_block = "10.208.0.0/16"
+  cidr_block = "10.50.0.0/16"
 
   enable_dns_hostnames = true
   enable_dns_support   = true
@@ -34,7 +34,7 @@ data "aws_availability_zones" "available" {}
 ## Cria uma Subnet Privada na AZ 1
 resource "aws_subnet" "private-1a" {
   vpc_id            = aws_vpc.vpc.id
-  cidr_block        = "10.208.1.0/24"
+  cidr_block        = "10.50.1.0/24"
   availability_zone = data.aws_availability_zones.available.names[0]
 
   tags = {
@@ -46,7 +46,7 @@ resource "aws_subnet" "private-1a" {
 ## Cria uma Subnet Privada na AZ 2
 resource "aws_subnet" "private-1b" {
   vpc_id            = aws_vpc.vpc.id
-  cidr_block        = "10.208.2.0/24"
+  cidr_block        = "10.50.2.0/24"
   availability_zone = data.aws_availability_zones.available.names[1]
 
   tags = {
@@ -58,7 +58,7 @@ resource "aws_subnet" "private-1b" {
 ## Cria uma Subnet Privada na AZ 3
 resource "aws_subnet" "private-1c" {
   vpc_id            = aws_vpc.vpc.id
-  cidr_block        = "10.208.3.0/24"
+  cidr_block        = "10.50.3.0/24"
   availability_zone = data.aws_availability_zones.available.names[2]
 
   tags = {
@@ -70,7 +70,7 @@ resource "aws_subnet" "private-1c" {
 ## Cria uma Subnet Publica na AZ 1
 resource "aws_subnet" "public-1a" {
   vpc_id            = aws_vpc.vpc.id
-  cidr_block        = "10.208.101.0/24"
+  cidr_block        = "10.50.101.0/24"
   availability_zone = data.aws_availability_zones.available.names[0]
 
   tags = {
@@ -82,7 +82,7 @@ resource "aws_subnet" "public-1a" {
 ## Cria uma Subnet Publica na AZ 2
 resource "aws_subnet" "public-1b" {
   vpc_id            = aws_vpc.vpc.id
-  cidr_block        = "10.208.102.0/24"
+  cidr_block        = "10.50.102.0/24"
   availability_zone = data.aws_availability_zones.available.names[1]
 
   tags = {
@@ -94,7 +94,7 @@ resource "aws_subnet" "public-1b" {
 ## Cria uma Subnet Publica na AZ 3
 resource "aws_subnet" "public-1c" {
   vpc_id            = aws_vpc.vpc.id
-  cidr_block        = "10.208.103.0/24"
+  cidr_block        = "10.50.103.0/24"
   availability_zone = data.aws_availability_zones.available.names[2]
 
   tags = {
