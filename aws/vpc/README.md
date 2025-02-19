@@ -38,7 +38,17 @@ A VPC é uma rede virtual muito semelhante a uma rede tradicional que você pode
 
 ## Sub-rede
 
+<https://docs.aws.amazon.com/pt_br/vpc/latest/userguide/configure-subnets.html#subnet-basics>
+
 Uma sub-rede consiste em um intervalo de endereços IP na VPC. Cada sub-rede fica alocada em uma única zona de disponibilidade. Após adicionar as sub-redes, você pode implantar os recursos da AWS na VPC.
+
+### Public
+
+A sub-rede tem uma rota direta para um gateway da Internet. Os recursos podem acessar a Internet e serem acessados da Internet.
+
+### Private
+
+A sub-rede não tem uma rota direta para um gateway da Internet. Os recursos em uma sub-rede privada exigem um dispositivo NAT para acessar a Internet pública.
 
 ## Tabela de Rotas
 
@@ -58,6 +68,8 @@ Um gateway da Internet é um componente da VPC horizontalmente dimensionado, red
 
 Um gateway NAT é um serviço de Network Address Translation (NAT – Conversão de endereços de rede). Você pode usar um gateway NAT para que as instâncias em uma sub-rede privada possam se conectar a serviços fora da VPC, mas os serviços externos não podem iniciar uma conexão com essas instâncias.
 
+Para um cenário de alta disponibilidade, o ideal é ter um NAT Gateway em cada Zona de disponibilidade, pois se uma AZ tenha falha, as outras ainda possam acessar a Internet.
+
 Ao criar um gateway NAT, você deve especificar um dos seguintes tipos de conectividade:
 
 ### Public
@@ -69,6 +81,7 @@ Você cria um gateway NAT público em uma sub-rede pública e deve associar um e
 ### Private
 
 Instâncias em sub-redes privadas podem se conectar a outras VPCs ou à sua rede on-premises por meio de um gateway NAT privado. Você pode rotear o tráfego do gateway NAT por meio de um gateway de trânsito ou de um gateway privado virtual. Não é possível associar um endereço IP elástico a um gateway NAT privado. 
+
 
 ## Elastic IP
 
