@@ -2,12 +2,16 @@
 
 ## Ref:
 <https://aws.amazon.com/pt/iam/>\
+<https://docs.aws.amazon.com/pt_br/IAM/latest/UserGuide/introduction.html>
 <https://www.youtube.com/watch?v=spUlvo0HNFQ>\
 <https://www.youtube.com/watch?v=RY6CFCOZekM&pp=ygUHYXdzIGlhbQ%3D%3D>
 
 
 Com o AWS Identity and Access Management (IAM), é possível especificar quem pode acessar quais serviços e recursos da AWS e em que condições. O IAM é um recurso de sua conta da AWS disponibilizado gratuitamente. Para começar a usar o IAM, ou caso você já esteja registrado na AWS.
 
+## Custo
+
+O AWS Identity and Access Management (IAM), o AWS IAM Identity Center e o AWS Security Token Service (AWS STS) são recursos da conta da AWS oferecidos sem custo adicional. 
 
 ## Componentes
 
@@ -107,7 +111,7 @@ As **políticas inline**, por outro lado, são diretamente associadas a um únic
 
 
 
-### Terraform
+## Terraform
 
 #### Resource: aws_iam_role
 <https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role>
