@@ -99,7 +99,7 @@ Um grupo de segurança atua como firewall virtual para as instâncias do EC2 vis
 
 ## Terraform
 
-VPC de exemplo com seus componentes em Terraform[main.tf]](main.tf)
+VPC de exemplo com seus componentes em Terraform [main.tf](main.tf)
 
 ### Resource: aws_vpc
 <https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc>
