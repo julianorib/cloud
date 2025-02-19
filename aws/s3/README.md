@@ -8,7 +8,7 @@ O Amazon Simple Storage Service (Amazon S3) é um serviço de armazenamento de o
 ## Custo
 <https://aws.amazon.com/pt/s3/pricing/>
 
-Você paga pelo armazenamento de objetos em buckets do S3. A taxa cobrada depende do tamanho do objeto, do tempo de armazenamento dos objetos durante o mês e da classe de armazenamento
+Você paga pelo armazenamento de objetos em buckets do S3. A taxa cobrada depende do tamanho do objeto, do tempo de armazenamento dos objetos durante o mês e da classe de armazenamento.
 
 ## Classes de Armazenamento:
 <https://aws.amazon.com/pt/s3/storage-classes/>
@@ -20,9 +20,9 @@ Você paga pelo armazenamento de objetos em buckets do S3. A taxa cobrada depend
 | S3 Express One Zone | Armazenamento de alta performance para seus dados acessados com mais frequência |
 | S3 Standard-IA | Dados acessados com pouca frequência que precisam de acesso em milissegundos |
 | S3 One Zone-IA* | Dados recriáveis acessados com pouca frequência |
-| 
 
-## Amazon S3 Glacier
+
+### Amazon S3 Glacier
 <https://aws.amazon.com/pt/s3/storage-classes/glacier/>
 
 As classes de armazenamento do Amazon S3 Glacier são desenvolvidas especificamente para arquivamento de dados com a finalidade de oferecer a você a mais alta performance, a maior flexibilidade de recuperação e o armazenamento de arquivos de menor custo na nuvem. Todas as classes de armazenamento S3 Glacier fornecem escalabilidade virtualmente ilimitada e são projetadas para 99,999999999% (11 noves) de durabilidade de dados. As classes de armazenamento S3 Glacier oferecem opções para o acesso mais rápido aos seus dados de arquivo e o armazenamento de arquivo de menor custo na nuvem.
