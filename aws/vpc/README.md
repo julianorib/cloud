@@ -119,3 +119,6 @@ Um grupo de segurança atua como firewall virtual para as instâncias do EC2 vis
 
 ### Resource: aws_security_group
 <https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group.html>
+
+
+[VPC de exemplo com seus componentes em Terraform](main.tf)
