@@ -113,6 +113,9 @@ As **políticas inline**, por outro lado, são diretamente associadas a um únic
 
 ## Terraform
 
+Criação de uma Role, Associação de uma Politica e Criação de Uma Politica Inline em Terraform [main.tf](main.tf)
+
+
 #### Resource: aws_iam_role
 <https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role>
 
