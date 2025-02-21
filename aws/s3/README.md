@@ -46,7 +46,9 @@ O Amazon S3 oferece suporte a buckets globais, o que significa que cada nome de 
 
 Um Bucket pode ser Público ou Privado, mas tome cuidado em caso de um Bucket Público.
 
-Para acessar um objeto em um Bucket público, se o objeto chamado photos/puppy.jpg estiver armazenado no bucket amzn-s3-demo-bucket da região Oeste dos EUA (Oregon), ele poderá ser endereçado usando o URL https://amzn-s3-demo-bucket.s3.us-west-2.amazonaws.com/photos/puppy.jpg.
+Para acessar um objeto em um Bucket público, se o objeto chamado photos/puppy.jpg estiver armazenado no bucket amzn-s3-demo-bucket da região Oeste dos EUA (Oregon), ele poderá ser endereçado usando o URL:
+
+https://amzn-s3-demo-bucket.s3.us-west-2.amazonaws.com/photos/puppy.jpg.
 
 Não há tamanho máximo para o bucket ou limite para o número de objetos que você pode armazenar em um bucket. Você pode armazenar todos os objetos em um único bucket, ou pode organizá-los em vários buckets. No entanto, você não pode criar um bucket de dentro de outro bucket.
 
