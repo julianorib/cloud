@@ -45,7 +45,7 @@ Uma instância do EC2 é um servidor virtual na Nuvem AWS. Quando executa uma in
 <https://aws.amazon.com/pt/ec2/pricing/on-demand/>
 
 
-## Criar uma instância
+### Criar uma instância
 
 <https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/EC2_GetStarted.html>
 
