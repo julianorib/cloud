@@ -40,6 +40,21 @@ Uma instância do EC2 é um servidor virtual na Nuvem AWS. Quando executa uma in
 
 ![instance](instance-types.png)
 
+### Userdata
+
+<https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/user-data.html>
+
+Execute comandos (scripts) na primeira inicialização do Servidor.
+
+```
+#!/bin/bash
+yum install -y nginx
+systemctl enable nginx
+systemctl start nginx
+echo Hello World! > /usr/share/nginx/html/index.html
+echo $(hostname -s) >> /usr/share/nginx/html/index.html
+```
+
 ### Preços
 
 <https://aws.amazon.com/pt/ec2/pricing/on-demand/>
@@ -151,13 +166,28 @@ O Elastic Load Balancing é compatível com os seguintes tipos de balanceadores 
 
 <https://docs.aws.amazon.com/pt_br/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html>
 
+
 ### Preços
 
 <https://aws.amazon.com/pt/elasticloadbalancing/pricing/>
 
 ### Criar um Balanceador de Carga
 
-<https://docs.aws.amazon.com/pt_br/elasticloadbalancing/latest/userguide/load-balancer-getting-started.html>
+<https://docs.aws.amazon.com/pt_br/elasticloadbalancing/latest/userguide/load-balancer-getting-started.html>\
+<https://docs.aws.amazon.com/pt_br/elasticloadbalancing/latest/application/application-load-balancer-getting-started.html>
+
+#### Grupo de Destino
+
+Crie um grupo de destino, que é usado no roteamento da solicitação. A regra padrão para o seu listener roteia solicitações para os destinos registrados neste grupo de destino. O load balancer verifica a integridade dos destinos desse grupo de destino usando as configurações de verificação de integridade definidas para o grupo de destino.
+
+#### Defina o tipo de balanceador de carga
+
+O Elastic Load Balancing oferece suporte para diferentes tipos de balanceadores de carga, exemplo: Application Load balancer.
+
+#### Defina as Zonas e Subnets e Security Groups
+
+#### Defina as regras de Listener e Associe o Grupo de Destino
+
 
 ## Auto Scaling
 
