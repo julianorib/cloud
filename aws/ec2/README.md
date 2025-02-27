@@ -32,9 +32,15 @@ O Amazon Elastic Compute Cloud (Amazon EC2) oferece a plataforma de computação
 
 
 [Instancias](instancia/README.md)
+
 [Imagens](imagens/README.md)
+
 [Elastic Block Store](ebs/README.md)
+
 [Security Group](sg/README.md)
+
 [Elastic IP](eip/README.md)
+
 [LoadBalancer](lb/README.md)
+
 [AutoScaling](as/README.md)
