@@ -34,3 +34,9 @@ echo $(hostname -s) >> /usr/share/nginx/html/index.html
 
 
 ## Terraform
+
+Criação de uma instância em Terraform [main.tf](main.tf)
+
+
+### Resource: aws_instance
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance>
