@@ -19,28 +19,17 @@ O Amazon Elastic Compute Cloud (Amazon EC2) oferece a plataforma de computação
 
 ## Componentes
 
-- Instâncias
-- Imagens (AMI)
-- EBS (Volumes)
-
-- Security Groups
-- IPs Elasticos
-- Balanceamento de Carga
-
-- Auto Scaling
-
-
 
 ### [Instancias](instancia/README.md)
 
-[Imagens](imagens/README.md)
+### [Imagens](imagens/README.md)
 
-[Elastic Block Store](ebs/README.md)
+### [Elastic Block Store](ebs/README.md)
 
-[Security Group](sg/README.md)
+### [Security Group](sg/README.md)
 
-[Elastic IP](eip/README.md)
+### [Elastic IP](eip/README.md)
 
-[LoadBalancer](lb/README.md)
+### [LoadBalancer](lb/README.md)
 
-[AutoScaling](as/README.md)
+### [AutoScaling](as/README.md)
