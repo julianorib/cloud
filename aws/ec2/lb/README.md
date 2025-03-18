@@ -37,3 +37,22 @@ O Elastic Load Balancing oferece suporte para diferentes tipos de balanceadores 
 
 #### Defina as regras de Listener e Associe o Grupo de Destino
 
+## Terraform
+
+Criação de um LoadBalancer em Terraform [main.tf](main.tf)
+
+### Resource: aws_lb
+
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb>
+
+### Resource: aws_lb_listener
+
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_listener>
+
+### Resource: aws_lb_target_group
+
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_target_group>
+
+### Resource: aws_lb_target_group_attachment
+
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_target_group_attachment>
