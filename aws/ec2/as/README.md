@@ -15,3 +15,20 @@ Não há taxas adicionais com o Amazon EC2 Auto Scaling, então é fácil testá
 
 Será necessário criar um "Modelo de Execução".\
 Um modelo de execução que especifica o tipo de EC2 instância que o Amazon EC2 Auto Scaling cria para você. Inclua informações, como o ID da imagem de máquina da Amazon (AMI) a ser usada, o tipo de instância, o par de chaves e os grupos de segurança.
+
+
+## Terraform
+
+[HandsOn](https://developer.hashicorp.com/terraform/tutorials/aws/aws-asg?utm_source=WEBSITE&utm_medium=WEB_IO&utm_offer=ARTICLE_PAGE&utm_content=DOCS)
+
+### Resource: aws_launch_template
+
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/launch_template>
+
+### Resource: aws_autoscaling_group
+
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_group>
+
+### Resource: aws_autoscaling_attachment
+
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_attachment>
