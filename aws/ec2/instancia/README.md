@@ -38,5 +38,25 @@ echo $(hostname -s) >> /usr/share/nginx/html/index.html
 Criação de uma instância em Terraform [main.tf](main.tf)
 
 
+### Data Source: aws_availability_zones
+
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones>
+
+### Data Source: aws_vpc
+
+<https://registry.terraform.io/providers/hashicorp/aws/3.5.0/docs/data-sources/vpc>
+
+### Data Source: aws_subnet
+
+<https://registry.terraform.io/providers/hashicorp/aws/4.2.0/docs/data-sources/subnet>
+
+### Resource: aws_security_group
+
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group>
+
+### Resource: aws_key_pair
+
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_pair>
+
 ### Resource: aws_instance
 <https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance>
