@@ -14,3 +14,8 @@ Um Endereço IP elástico é um endereço IPv4 estático projetado para computa�
 
 <https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/working-with-eips.html#using-instance-addressing-eips-allocating>\
 <https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/working-with-eips.html>
+
+
+### Terraform
+
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eip>
