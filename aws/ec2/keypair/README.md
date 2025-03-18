@@ -15,3 +15,4 @@ Para instâncias do Linux, quando a instância é inicializada pela primeira vez
 
 ### Terraform
 
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_pair>
