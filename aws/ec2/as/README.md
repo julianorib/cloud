@@ -16,10 +16,24 @@ Não há taxas adicionais com o Amazon EC2 Auto Scaling, então é fácil testá
 Será necessário criar um "Modelo de Execução".\
 Um modelo de execução que especifica o tipo de EC2 instância que o Amazon EC2 Auto Scaling cria para você. Inclua informações, como o ID da imagem de máquina da Amazon (AMI) a ser usada, o tipo de instância, o par de chaves e os grupos de segurança.
 
+### Criar uma Politica de Escalabilidade
+
+<https://docs.aws.amazon.com/pt_br/autoscaling/ec2/userguide/as-scaling-simple-step.html>
+
+O escalonamento por etapas e as políticas de escalabilidade simples escalam a capacidade do seu grupo de Auto Scaling em incrementos predefinidos com base em alarmes. CloudWatch É possível definir políticas de escalabilidade separadas para lidar com o aumento horizontal da escala (aumento da capacidade) e com a redução horizontal da escala (diminuição da capacidade) quando um limite de alarme é violado.
+
 
 ## Terraform
 
+Criação de um Grupo de Auto Scaling em Terraform [main.tf](main.tf)
+- Security Groups
+- Template
+- Auto Scaling Group
+- Auto Scaling Policy
+- Load Balancer
+
 [HandsOn](https://developer.hashicorp.com/terraform/tutorials/aws/aws-asg?utm_source=WEBSITE&utm_medium=WEB_IO&utm_offer=ARTICLE_PAGE&utm_content=DOCS)
+
 
 ### Resource: aws_launch_template
 
