@@ -32,3 +32,8 @@ Um modelo de execução que especifica o tipo de EC2 instância que o Amazon EC2
 ### Resource: aws_autoscaling_attachment
 
 <https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_attachment>
+
+
+### Resource: aws_autoscaling_policy
+
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_policy>

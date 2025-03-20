@@ -102,9 +102,9 @@ resource "aws_autoscaling_group" "example" {
   vpc_zone_identifier = data.aws_subnets.default.ids
 
 
-  desired_capacity = 3
+  desired_capacity = 2
   max_size         = 5
-  min_size         = 2
+  min_size         = 1
 
   launch_template {
     id      = aws_launch_template.example.id
@@ -116,5 +116,4 @@ resource "aws_autoscaling_group" "example" {
     propagate_at_launch = true
   }
 }
-
 

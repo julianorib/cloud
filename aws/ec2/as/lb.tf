@@ -11,11 +11,18 @@ resource "aws_security_group" "example" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+    egress {
+    description = "all"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 }
 
-## Criar o Loadbalance Example
+## Criar o Loadbalance example
 resource "aws_lb" "example" {
-  name               = "Example"
+  name               = "example"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.example.id]
