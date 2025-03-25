@@ -33,11 +33,42 @@ Aurora é altamente escalável, com replicação automática, backups contínuos
 <https://aws.amazon.com/pt/rds/pricing/>\
 <https://aws.amazon.com/pt/rds/pricing/#Pricing_by_Amazon_RDS_engines>
 
+## Engine
+
+<https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html>
+
+## Classes
+
+- Serverless
+- Memory-optimized
+- Burstable-performance
+- Optimized Reads
+
+<https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.Types.html>\
+<https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.Types.html>
+
+
+## Engine x DB Instance Classes
+<https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.SupportAurora.html>\
+<https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.Support.html>
+
 
 
 ## Terraform
 
 
-###
+### Instância comum
+Criação de uma instância DB em Terraform [main.tf](main.tf)
 
-###
+#### Resource: aws_db_instance
+
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_instance>
+
+### Aurora
+#### Resource: aws_rds_cluster
+
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/rds_cluster>
+
+#### Resource: aws_rds_cluster_instance
+
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/rds_cluster_instance>
