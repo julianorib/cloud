@@ -127,3 +127,12 @@ Criação de um Bucket S3 em Terraform [main.tf](main.tf)
 
 ### Resource: aws_s3_bucket_lifecycle_configuration
 <https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_lifecycle_configuration>
+
+### Resource: aws_s3_bucket_ownership_controls
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_ownership_controls>
+
+### Resource: aws_s3_bucket_public_access_block
+<https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block>
+
+### Resource: aws_s3_object
+<https://registry.terraform.io/providers/-/aws/latest/docs/resources/s3_object>
