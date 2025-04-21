@@ -85,7 +85,7 @@ aws s3 ls nomedobucket/pasta/
 ### Criar um Bucket
 
 ```
-aws d3 mb s3://bucket-example-xpto
+aws s3 mb s3://bucket-example-xpto
 ```
 
 ### Enviar um arquivo para um Bucket

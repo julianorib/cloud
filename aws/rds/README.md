@@ -53,11 +53,12 @@ Aurora é altamente escalável, com replicação automática, backups contínuos
 <https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.Support.html>
 
 
+## Aurora Engine Version
+
+<https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.VersionPolicy.html>
 
 ## Terraform
 
-
-### Instância comum
 Criação de uma instância DB em Terraform [main.tf](main.tf)
 
 #### Resource: aws_db_instance
