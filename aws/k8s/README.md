@@ -12,6 +12,64 @@ O Amazon EKS permite executar suas aplicações do Kubernetes no Amazon Elastic 
 <https://aws.amazon.com/pt/eks/pricing/>\
 <https://docs.aws.amazon.com/pt_br/eks/latest/userguide/create-kubeconfig.html>
 
+## Valores
+<https://aws.amazon.com/pt/eks/pricing/>
+
+
+## eksctl
+<https://eksctl.io/installation/>
+
+### basic cluster
+```
+eksctl create cluster
+```
+
+### customized
+`cluster.yaml`
+```
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: my-cluster
+  region: us-east-2
+
+nodeGroups:
+  - name: ng-1
+    instanceType: t3.large
+    desiredCapacity: 10
+  - name: ng-2
+    instanceType: m5.xlarge
+    desiredCapacity: 2
+```
+```
+eksctl create cluster -f cluster.yaml
+```
+
+### Visualizar o Cluster
+```
+eksctl get cluster
+```
+
+### Autoscaling
+
+```
+eksctl create cluster --name=MyCluster --nodes-min=3 --nodes-max=5
+```
+
+### Kubeconfig
+```
+eksctl utils write-kubeconfig --cluster mycluster --region us-east-2
+```
+```
+aws eks update-kubeconfig --region region-code --name my-cluster
+```
+
+### Delete Cluster
+```
+eksctl delete cluster --name mycluster --region us-east-2
+```
+
 
 ## Terraform
 
